@@ -21,17 +21,23 @@
 bool is_isogram(const char phrase[]){
     int len = strlen(phrase);
     for (int i=0; i<len; i++) {
-        char currentChar = phrase[i];
-        //check all other chars against currentChar
-        //find if there are more than 1 occurences
-        int occurences = 0;
-        for(int j=0; j<len; j++){
-            if (phrase[j] == currentChar) {
-                occurences++;
+        
+        if(phrase[i] != 32){    //only check if not "space"
+            char currentChar = phrase[i];
+            //check all other chars against currentChar
+            //find if there are more than 1 occurences
+            int occurences = 0;
+            for(int j=0; j<len; j++){
+                if ((currentChar >= 'A' ) && (currentChar <= 'Z' )){
+                    currentChar += 32;
+                }
+                if ((phrase[j] == currentChar) | (phrase[j] == currentChar - 32)) {
+                    occurences++;
+                }
             }
-        }
-        if (occurences > 1) { //found duplicate characters --> no isogram
-            return false;
+            if (occurences > 1) { //found duplicate characters --> no isogram
+                return false;
+            }
         }
     }
     // we didnt find duplicates, must be an isogram
