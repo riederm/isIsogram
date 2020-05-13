@@ -1,6 +1,7 @@
 #include "isogram.h"
 #include "string.h"
 #include "math.h"
+#include <stdlib.h>
 
 // array[0-255] Anzhal des jeweiligen Zeichens im String
 /* forEach(character in phrase){
