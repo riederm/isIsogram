@@ -30,14 +30,13 @@ void test_short_strings() {
     TEST_ASSERT_TRUE(is_isogram("abc"));
     TEST_ASSERT_TRUE(is_isogram("def"));
 
-   
-    TEST_ASSERT_TRUE(is_isogram("aa"));
-    TEST_ASSERT_TRUE(is_isogram("bb"));
-    TEST_ASSERT_TRUE(is_isogram("cc"));
-
-     //negative tests
-    TEST_ASSERT_TRUE(is_isogram("aab"));
-    TEST_ASSERT_TRUE(is_isogram("bbc"));
+    TEST_ASSERT_TRUE(is_isogram("aa")); //all chars once
+    TEST_ASSERT_TRUE(is_isogram("aabb")); // all chars 2 times
+    TEST_ASSERT_TRUE(is_isogram("aabbcc")); //all chars 2 times
+    
+    //negative tests
+    TEST_ASSERT_FALSE(is_isogram("aab"));
+    TEST_ASSERT_FALSE(is_isogram("dee"));
 }
 
 void test_long_strings() {
@@ -81,10 +80,10 @@ void test_special_characters_strings(){
     TEST_ASSERT_TRUE(is_isogram("!?%"));
     TEST_ASSERT_TRUE(is_isogram("!??$"));
     TEST_ASSERT_TRUE(is_isogram("abc??"));
-    TEST_ASSERT_TRUE(is_isogram("aabbcc??"));
+    TEST_ASSERT_TRUE(is_isogram("aabbcc???"));
 
     //negative tests
-    TEST_ASSERT_FALSE(is_isogram("!??$a$ab"));
+    TEST_ASSERT_FALSE(is_isogram("!??$a$$ab"));
 }
 
 void test_digit_strings() {
@@ -94,11 +93,10 @@ void test_digit_strings() {
     TEST_ASSERT_FALSE(is_isogram("123451"));
 }
 
-//TODO#1 special characters are ignored is_isogram("abc!!")
-
-//TODO#2 extend definition of isIsogram to extended definition
+// TODO#2 extend definition of isIsogram to extended defition
 //          any number of occurences is fine, as long as its the same number
-//          e.g.: is_isogram
+//          e.g.: is_isogram("aaabbbccc") ==> TRUE (weil a=3, b=3, c=3)
+//                is_isogram("aaabbbcccc") ==> FALSE (weil a=3, b=3, c=4)  
 
 int main(void)
 {
