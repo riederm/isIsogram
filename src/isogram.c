@@ -1,6 +1,7 @@
 #include "isogram.h"
 #include "string.h"
 
+
 bool isIgnored(char c) {
     return c == ' ';
 }
