@@ -76,9 +76,11 @@ void test_mixed_case_strings() {
 void test_special_characters_strings(){
     //positive tests
     TEST_ASSERT_TRUE(is_isogram("!?%"));
+    TEST_ASSERT_TRUE(is_isogram("!??$"));
+    TEST_ASSERT_TRUE(is_isogram("abc??"));
 
     //negative tests
-    TEST_ASSERT_FALSE(is_isogram("!??$"));
+    TEST_ASSERT_FALSE(is_isogram("!??$a$$ab"));
 }
 
 void test_digit_strings() {
@@ -87,6 +89,11 @@ void test_digit_strings() {
     //negative tests
     TEST_ASSERT_FALSE(is_isogram("123451"));
 }
+
+// TODO#2 extend definition of isIsogram to extended defition
+//          any number of occurences is fine, as long as its the same number
+//          e.g.: is_isogram("aaabbbccc") ==> TRUE (weil a=3, b=3, c=3)
+//                is_isogram("aaabbbcccc") ==> FALSE (weil a=3, b=3, c=4)  
 
 int main(void)
 {

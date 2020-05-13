@@ -1,9 +1,12 @@
 #include "isogram.h"
 #include "string.h"
 
-
-bool isIgnored(char c) {
-    return c == ' ';
+// ignore everything but characters (a-z, A-Z) and digits (0-9)
+bool isIgnored(char lowerCaseC) {
+    bool isLowerChar = (lowerCaseC >= 'a' && lowerCaseC <= 'z');
+    bool isDigit = (lowerCaseC >= '0' && lowerCaseC <= '9');
+    return 
+        !(isLowerChar || isDigit);
 }
 
 char toLowerCase(char c){
