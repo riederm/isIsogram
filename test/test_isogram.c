@@ -31,10 +31,13 @@ void test_short_strings() {
     TEST_ASSERT_TRUE(is_isogram("abc"));
     TEST_ASSERT_TRUE(is_isogram("def"));
 
+    TEST_ASSERT_TRUE(is_isogram("aa")); //all chars once
+    TEST_ASSERT_TRUE(is_isogram("aabb")); // all chars 2 times
+    TEST_ASSERT_TRUE(is_isogram("aabbcc")); //all chars 2 times
+    
     //negative tests
-    TEST_ASSERT_FALSE(is_isogram("aa"));
-    TEST_ASSERT_FALSE(is_isogram("bb"));
-    TEST_ASSERT_FALSE(is_isogram("cc"));
+    TEST_ASSERT_FALSE(is_isogram("aab"));
+    TEST_ASSERT_FALSE(is_isogram("dee"));
 }
 
 void test_long_strings() {
@@ -78,6 +81,7 @@ void test_special_characters_strings(){
     TEST_ASSERT_TRUE(is_isogram("!?%"));
     TEST_ASSERT_TRUE(is_isogram("!??$"));
     TEST_ASSERT_TRUE(is_isogram("abc??"));
+    TEST_ASSERT_TRUE(is_isogram("aabbcc???"));
 
     //negative tests
     TEST_ASSERT_FALSE(is_isogram("!??$a$$ab"));
