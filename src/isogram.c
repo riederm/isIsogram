@@ -6,6 +6,6 @@
 
 
 bool is_isogram(const char phrase[]){
-
+    printf("Test");
     return true;
 }
