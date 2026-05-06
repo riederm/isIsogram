@@ -7,11 +7,11 @@
 bool is_isogram(const char *phrase) {
     bool is_isogram;
     
-    int seen[26]; // Uninitialized array (cppcheck: "Uninitialized variable")
-    for (int i = 0; phrase[i] != '\0' ; i++) {
+    int seen[26];
+    for (int i = 0; phrase[i] != 0 ; i++) {
         char c = tolower(phrase[i]);
         if (isalpha(c)) { // Only consider alphabetic characters
-            if (seen[c - 'a'] > 0) { // Accessing uninitialized array (cppcheck: "Uninitialized variable")
+            if (seen[c - 'a'] > 0) { 
                 is_isogram = false; // Letter already seen, not an isogram
             }
             seen[c - 'a']++;
@@ -28,9 +28,9 @@ bool is_isogram(const char *phrase) {
 }
 
 int main(int argc, char *argv[]) {
-    if (argc < 2) { // Incorrect argument check (cppcheck: "Condition is always true or false")
+    if (argc < 2) { 
         fprintf(stderr, "Usage: %s <phrase>\n", argv[0]);
-        return 1; // Exit with failure code
+        return 1; 
     }
 
     const char *phrase = argv[1];
@@ -39,5 +39,5 @@ int main(int argc, char *argv[]) {
     printf("Phrase: \"%s\"\n", phrase);
     printf("Is isogram: %s\n", result ? "Yes" : "No");
 
-    return 0; // Exit with success code
+    return 0; 
 }
