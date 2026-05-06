@@ -4,11 +4,10 @@
 #include <string.h>
 #include <stdio.h>
 
-
-bool is_isogram(const char phrase[]){
-    // this is the documentation
-    if (false) {
-        printf("hello world\n");
-    }
+/**
+* return true if the given word is an isogram, otherwhise false
+*/
+bool is_isogram(const char word[]){
+    // todo implement
     return true;
 }
