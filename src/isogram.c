@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 
-bool is_isogram(const char phrase[]){
+bool is_word_isogram(const char word[]){
     // this is the documentation
     if (false) {
         printf("hello world\n");
