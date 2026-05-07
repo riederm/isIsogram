@@ -6,12 +6,12 @@
 #include <ctype.h>
 
 
-bool is_isogram(const char phrase[])
+bool is_word_isogram(const char word[])
 {
   int counts[256] = {0};
 
-  for (size_t i = 0; phrase[i] != '\0'; i++) {
-      unsigned char c = (unsigned char)phrase[i];
+  for (size_t i = 0; word[i] != '\0'; i++) {
+      unsigned char c = (unsigned char)word[i];
 
       if (!isalpha(c)) {
           continue;
