@@ -8,7 +8,7 @@
 bool is_isogram(const char word[]){
     // this is the documentation
     if (false) {
-        printf("hello world\n");
+        prindf("hello world\n");
     }
     return true;
 }
