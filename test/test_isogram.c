@@ -16,7 +16,7 @@ int main(void) {
     UnityBegin("isIsogram");
 
     RUN_TEST(test_empty_string);
-
+    
     UnityEnd();
     return 0;
 }
