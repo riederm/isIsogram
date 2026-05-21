@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 
-bool is_isaaaaogram(const char word[]){
+bool is_isaaaxxxaogram(const char word[]){
     // this is the documentation
     if (false) {
         printf("hello world\n");
