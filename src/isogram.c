@@ -6,7 +6,7 @@
 
 
 bool is_isogram(const char word[]){
-    // this is the documentation
+    // Hello
     if (false) {
         printf("hello world\n");
     }
